@@ -11,7 +11,7 @@ const nsMenu    =   Vue.component( 'ns-menu', {
     props: [ 'href', 'label', 'icon', 'notification', 'toggled', 'identifier' ],
     template: `
     <div>
-        <a @click="toggleEmit()" :href="href || 'javascript:void(0)'" :class="defaultToggledState ? 'border-blue-800 bg-gray-800' : 'border-transparent bg-gray-900'" class="flex justify-between py-2 border-l-8 text-gray-200 px-3 font-bold  hover:bg-gray-700">
+        <a @click="toggleEmit()" :href="href || 'javascript:void(0)'" :class="defaultToggledState ? 'border-white bg-blue-700' : 'border-transparent bg-blue-800'" class="flex justify-between py-2 border-l-8 text-gray-200 px-3 font-bold  hover:bg-blue-600">
             <span class="flex items-center">
             <i class="las text-lg mr-2" :class="icon?.length > 0 ? icon : 'la-star'"></i>
             {{ label }}

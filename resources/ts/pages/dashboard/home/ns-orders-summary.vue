@@ -1,7 +1,7 @@
 <template>
-    <div class="flex flex-auto flex-col shadow rounded-lg overflow-hidden">
-        <div class="p-2 flex justify-between bg-white border-b">
-            <h3 class="font-semibold text-gray-700">{{ __( 'Recents Orders' ) }}</h3>
+    <div class="flex flex-auto flex-col  shadow rounded-lg overflow-hidden">
+        <div class="px-4 py-2 flex justify-between bg-blue-700 border-b">
+            <h3 class="font-semibold text-white">{{ __( 'Recents Orders' ) }}</h3>
             <div class="">
                 
             </div>
@@ -11,8 +11,8 @@
                 <ns-spinner size="8" border="4"></ns-spinner>
             </div>
             <div class="h-full flex items-center justify-center flex-col" v-if="hasLoaded && orders.length === 0">
-                <i class="las la-grin-beam-sweat text-6xl text-gray-700"></i>
-                <p class="text-gray-600 text-sm">{{ __( 'Well.. nothing to show for the meantime.' ) }}</p>
+                <i class="las la-grin-beam-sweat text-6xl text-blue-700"></i>
+                <p class="text-blue-600 text-sm">{{ __( 'Well.. nothing to show for the meantime.' ) }}</p>
             </div>
             <div 
                 v-for="order of orders" 
@@ -23,7 +23,7 @@
                     <h3 class="text-lg font-semibold text-gray-600">{{ __( 'Order' ) }} : {{ order.code }}</h3>
                     <div class="flex -mx-2">
                         <div class="px-1">
-                            <h4 class="text-semibold text-xs text-gray-500">
+                            <h4 class="text-semibold text-xs text-gray-600">
                                 <i class="lar la-user-circle"></i>
                                 <span>{{ order.user.username }}</span>
                             </h4>

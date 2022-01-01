@@ -1,8 +1,8 @@
 <div id="dashboard-header" class="w-full flex justify-between p-4">
     <div class="flex items-center">
         <div>
-            <div @click="toggleSideMenu()" class="hover:bg-white hover:text-gray-700 hover:shadow-lg hover:border-opacity-0 border border-gray-400 rounded-full h-10 w-10 cursor-pointer font-bold text-2xl justify-center items-center flex text-gray-800">
-                <i class="las la-bars"></i>
+            <div @click="toggleSideMenu()" class="hover:bg-white hover:text-blue-700 hover:shadow-lg hover:border-opacity-0 border border-blue-400 rounded-full h-10 w-10 cursor-pointer font-bold text-2xl justify-center items-center flex text-blue-800">
+                <i class="las la-bars text-blue-700"></i>
             </div>
         </div>
     </div>

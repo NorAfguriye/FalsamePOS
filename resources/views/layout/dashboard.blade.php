@@ -52,13 +52,13 @@ use App\Services\DateService;
 <body <?php echo in_array( app()->getLocale(), config( 'nexopos.rtl-languages' ) ) ? 'dir="rtl"' : "";?>>
     <div class="h-full w-full flex flex-col">
         <div id="dashboard-body" class="overflow-hidden flex flex-auto">
-            <div id="dashboard-aside" v-cloak v-if="sidebar === 'visible'" class="w-64 z-50 absolute md:static flex-shrink-0 bg-gray-900 h-full flex-col overflow-hidden">
+            <div id="dashboard-aside" v-cloak v-if="sidebar === 'visible'" class="w-64 z-50 absolute md:static flex-shrink-0 bg-blue-800 h-full flex-col overflow-hidden">
                 <div class="overflow-y-auto h-full text-sm">
                     <div class="logo py-4 flex justify-center items-center">
                         @if ( ns()->option->get( 'ns_store_rectangle_logo' ) )
                         <img src="{{ ns()->option->get( 'ns_store_rectangle_logo' ) }}" class="w-11/12" alt="logo"/>
                         @else
-                        <h1 class="font-black text-transparent bg-clip-text bg-gradient-to-b from-blue-200 to-indigo-400 text-3xl">NexoPOS</h1>
+                        <h1 class="font-black text-transparent text-white text-3xl">Falsame <span class="bg-white text-blue-800 py-1 px-3 rounded-xl font-black">POS</span></h1>
                         @endif
                     </div>
                     <ul>
@@ -103,7 +103,7 @@ use App\Services\DateService;
                 </div>
                 <div class="p-2 text-xs flex justify-end text-gray-500">
                     {!! 
-                        Hook::filter( 'ns-footer-signature', sprintf( __( 'You\'re using <a tager="_blank" href="%s" class="hover:text-blue-400 mx-1 inline-block">NexoPOS %s</a>' ), 'https://my.nexopos.com/en', config( 'nexopos.version' ) ) )
+                        Hook::filter( 'ns-footer-signature', sprintf( __( 'You\'re using <a tager="_blank" href="%s" class="hover:text-blue-800 mx-1 inline-block">NexoPOS %s</a>' ), 'https://my.nexopos.com/en', config( 'nexopos.version' ) ) )
                     !!}
                 </div>
             </div>

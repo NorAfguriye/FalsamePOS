@@ -6,24 +6,24 @@
             </div>
         </div>
         <div class="p-2 bg-white -mx-4 flex flex-wrap">
-            <div class="flex w-full md:w-1/2 lg:w-full xl:w-1/2 lg:border-b lg:border-t xl:border-none border-gray-200 lg:py-1 lg:my-1">
+            <div class="flex w-full md:w-1/2 lg:w-full xl:w-1/2 lg:border-b lg:border-t xl:border-none border-blue-200 lg:py-1 lg:my-1">
                 <div class="px-4 w-1/2 lg:w-1/2 flex flex-col items-center justify-center">
-                    <span class="text-xs text-gray-600">{{ __( 'Weekly Sales' ) }}</span>
-                    <h2 class="text-lg xl:text-xl text-gray-700 font-bold">{{ totalWeeklySales | currency( 'abbreviate' ) }}</h2>
+                    <span class="text-xs text-blue-600">{{ __( 'Weekly Sales' ) }}</span>
+                    <h2 class="text-lg xl:text-xl text-blue-700 font-bold">{{ totalWeeklySales | currency( 'abbreviate' ) }}</h2>
                 </div>
                 <div class="px-4 w-1/2 lg:w-1/2 flex flex-col items-center justify-center">
-                    <span class="text-xs text-gray-600">{{ __( 'Week Taxes' ) }}</span>
-                    <h2 class="text-lg xl:text-xl text-gray-700 font-bold">{{ totalWeekTaxes | currency( 'abbreviate' ) }}</h2>
+                    <span class="text-xs text-blue-600">{{ __( 'Week Taxes' ) }}</span>
+                    <h2 class="text-lg xl:text-xl text-blue-700 font-bold">{{ totalWeekTaxes | currency( 'abbreviate' ) }}</h2>
                 </div>
             </div>
             <div class="flex w-full md:w-1/2 lg:w-full xl:w-1/2">
                 <div class="px-4 w-full lg:w-1/2 flex flex-col items-center justify-center">
-                    <span class="text-xs text-gray-600">{{ __( 'Net Income' ) }}</span>
-                    <h2 class="text-lg xl:text-xl text-gray-700 font-bold">{{ totalWeekIncome | currency( 'abbreviate' ) }}</h2>
+                    <span class="text-xs text-blue-600">{{ __( 'Net Income' ) }}</span>
+                    <h2 class="text-lg xl:text-xl text-blue-700 font-bold">{{ totalWeekIncome | currency( 'abbreviate' ) }}</h2>
                 </div>
                 <div class="px-4 w-full lg:w-1/2 flex flex-col items-center justify-center">
-                    <span class="text-xs text-gray-600">{{ __( 'Week Expenses' ) }}</span>
-                    <h2 class="text-lg xl:text-xl text-gray-700 font-bold">{{ totalWeekExpenses | currency( 'abbreviate' ) }}</h2>
+                    <span class="text-xs text-blue-600">{{ __( 'Week Expenses' ) }}</span>
+                    <h2 class="text-lg xl:text-xl text-blue-700 font-bold">{{ totalWeekExpenses | currency( 'abbreviate' ) }}</h2>
                 </div>
             </div>
         </div>
