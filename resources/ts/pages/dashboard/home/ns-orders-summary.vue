@@ -1,6 +1,6 @@
 <template>
     <div class="flex flex-auto flex-col  shadow rounded-lg overflow-hidden">
-        <div class="px-4 py-2 flex justify-between bg-blue-700 border-b">
+        <div class="px-4 py-2 flex justify-between bg-blue-600 border-b">
             <h3 class="font-semibold text-white">{{ __( 'Recents Orders' ) }}</h3>
             <div class="">
                 
@@ -11,8 +11,8 @@
                 <ns-spinner size="8" border="4"></ns-spinner>
             </div>
             <div class="h-full flex items-center justify-center flex-col" v-if="hasLoaded && orders.length === 0">
-                <i class="las la-grin-beam-sweat text-6xl text-blue-700"></i>
-                <p class="text-blue-600 text-sm">{{ __( 'Well.. nothing to show for the meantime.' ) }}</p>
+                <i class="las la-grin-beam-sweat text-6xl text-gray-600 "></i>
+                <p class="text-gray-600 text-sm">{{ __( 'Well.. nothing to show for the meantime.' ) }}</p>
             </div>
             <div 
                 v-for="order of orders" 

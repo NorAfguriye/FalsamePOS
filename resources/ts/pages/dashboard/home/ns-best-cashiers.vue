@@ -1,7 +1,7 @@
 <template>
     <div class="flex flex-auto flex-col shadow rounded-lg overflow-hidden">
         <div class="head bg-white flex-auto">
-            <div class="head text-center bg-blue-700 font-semibold border-b border-gray-200 text-white w-full py-2">
+            <div class="head text-center bg-blue-600 font-semibold border-b border-gray-200 text-white w-full py-2">
                 <h5>{{ __( 'Best Cashiers' ) }}</h5>
             </div>
             <div class="body">
@@ -31,8 +31,8 @@
                     <ns-spinner size="8" border="4"></ns-spinner>
                 </div>
                 <div class="h-56 flex items-center justify-center flex-col" v-if="hasLoaded && cashiers.length === 0">
-                    <i class="las la-grin-beam-sweat text-6xl text-blue-700"></i>
-                    <p class="text-blue-600 text-sm">{{ __( 'Well.. nothing to show for the meantime.' ) }}</p>
+                    <i class="las la-grin-beam-sweat text-6xl text-gray-600"></i>
+                    <p class="text-gray-600 text-sm">{{ __( 'Well.. nothing to show for the meantime.' ) }}</p>
                 </div>
             </div>
         </div>

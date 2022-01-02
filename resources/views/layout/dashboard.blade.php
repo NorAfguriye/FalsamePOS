@@ -58,7 +58,7 @@ use App\Services\DateService;
                         @if ( ns()->option->get( 'ns_store_rectangle_logo' ) )
                         <img src="{{ ns()->option->get( 'ns_store_rectangle_logo' ) }}" class="w-11/12" alt="logo"/>
                         @else
-                        <h1 class="font-black text-transparent text-white text-3xl">Falsame <span class="bg-white text-blue-800 py-1 px-3 rounded-xl font-black">POS</span></h1>
+                        <h1 class="font-black text-transparent text-white text-3xl">Falsame <span class="bg-white text-blue-800 py-1 px-2 rounded-xl font-black">POS</span></h1>
                         @endif
                     </div>
                     <ul>
