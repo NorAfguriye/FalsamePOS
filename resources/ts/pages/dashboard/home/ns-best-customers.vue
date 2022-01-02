@@ -9,7 +9,7 @@
                     <ns-spinner size="12" border="4"></ns-spinner>
                 </div>
                 <div class="h-56 flex items-center justify-center flex-col" v-if="hasLoaded && customers.length === 0">
-                    <i class="las la-grin-beam-sweat text-6xl text-gray-600"></i>
+                    <i class="las la-dizzy text-6xl text-gray-600"></i>
                     <p class="text-gray-600 text-sm">{{ __( 'Well.. nothing to show for the meantime' ) }}</p>
                 </div>
                 <table class="table w-full" v-if="customers.length > 0">
