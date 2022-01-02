@@ -5,13 +5,13 @@
             <ns-orders-chart></ns-orders-chart>
         </div>
         <div class="p-4 w-full flex lg:w-1/2">
-            <ns-orders-summary></ns-orders-summary>
+            <ns-best-cashiers></ns-best-cashiers>
         </div>
         <div class="p-4 w-full flex lg:w-1/2">
             <ns-best-customers></ns-best-customers>
         </div>
         <div class="p-4 w-full flex lg:w-1/2">
-            <ns-best-cashiers></ns-best-cashiers>
+            <ns-orders-summary></ns-orders-summary>
         </div>
     </div>
 </div>
