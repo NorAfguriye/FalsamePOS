@@ -47,13 +47,12 @@ export default {
                 },
                 stroke: {
                     curve: 'smooth',
-                    dashArray: [ 0, 8 ]
                 },
                 xaxis: {
                     categories: []
                 },
                 colors: [
-                    '#5f83f3', '#AAA'
+                    '#00e396', '#2563eb'
                 ],
             },
             series: [{

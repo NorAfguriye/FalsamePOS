@@ -47,8 +47,8 @@
                                     <img v-if="data.preview_url" :src="data.preview_url" class="object-cover h-full" :alt="data.name">
                                     <i class="las la-image text-gray-600 text-6xl" v-if="! data.preview_url"></i>
                                 </div>
-                                <div class="h-0 w-full">
-                                    <div class="relative w-full flex items-center justify-center -top-10 h-20 py-2" style="background:rgb(255 255 255 / 73%)">
+                                <div class="h-20 w-full">
+                                    <div class="relative w-full flex items-center justify-center -top-0 h-20 py-2" style="background:white">
                                         <h3 class="text-sm font-bold text-gray-700 py-2 text-center">{{ data.name }}</h3>
                                     </div>
                                 </div>
@@ -68,8 +68,8 @@
                                     <img v-if="data.galleries && data.galleries.filter( i => i.featured === 1 ).length > 0" :src="data.galleries.filter( i => i.featured === 1 )[0].url" class="object-cover h-full" :alt="data.name">
                                     <i v-if="! data.galleries || data.galleries.filter( i => i.featured === 1 ).length === 0" class="las la-image text-gray-600 text-6xl"></i>
                                 </div>
-                                <div class="h-0 w-full">
-                                    <div class="relative w-full flex flex-col items-center justify-center -top-10 h-20 p-2" style="background:rgb(255 255 255 / 73%)">
+                                <div class="h-20 w-full">
+                                    <div class="relative w-full flex flex-col items-center justify-center -top-0 h-20 p-2" style="background:rgb(255 255 255 / 73%)">
                                         <h3 class="text-sm text-gray-700 text-center w-full">{{ data.name }}</h3>
                                         <span class="text-sm text-gray-600" v-if="data.unit_quantities && data.unit_quantities.length === 1">{{ data.unit_quantities[0].sale_price | currency }}</span>
                                     </div>
