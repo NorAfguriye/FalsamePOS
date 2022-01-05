@@ -27,7 +27,7 @@
                                     </div>
                                 </div>
                             </th>
-                            <th class="flex justify-end text-green-700 p-2">{{ customer.purchases_amount | currency }}</th>
+                            <th class="flex justify-end text-[#00e396] py-2 px-4">{{ customer.purchases_amount | currency }}</th>
                         </tr>
                     </thead>
                 </table>

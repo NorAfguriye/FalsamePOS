@@ -27,7 +27,7 @@
                     <li><a @click="loadCategories( bread )" v-for="bread of breadcrumbs" :key="bread.id" href="javascript:void(0)" class="px-3 text-gray-700">{{ bread.name }} <i class="las la-angle-right"></i></a></li>
                 </ul>
             </div>
-            <div id="grid-items" class="overflow-hidden h-full flex-col flex">
+            <div id="grid-items" class="overflow-hidden h-full p- flex-col flex">
                 <div v-if="! rebuildGridComplete" class="h-full w-full flex-col flex items-center justify-center">
                     <ns-spinner></ns-spinner>
                     <span class="text-gray-600 my-2">Rebuilding...</span>
