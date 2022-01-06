@@ -1,5 +1,5 @@
 <template>
-    <div id="pos-grid" class="flex-auto flex flex-col">
+    <div id="pos-grid" class="flex-auto flex flex-col drop-shadow-2xl">
         <div id="tools" class="flex pl-2" v-if="visibleSection === 'grid'">
             <div @click="switchTo( 'cart' )" class="flex cursor-pointer rounded-tl-lg rounded-tr-lg px-3 py-2 bg-gray-300 border-t border-r border-l border-gray-300 text-gray-600">
                 <span>Cart</span>
@@ -21,12 +21,13 @@
                     <input ref="search" v-model="barcode" type="text" class="flex-auto outline-none px-2 bg-gray-100">
                 </div>
             </div>
-            <div id="grid-breadscrumb" class="p-2 border-gray-200">
+            <div id="grid-breadscrumb" class="p-2 border-gray-200  mb-6">
                 <ul class="flex">
-                    <li><a @click="loadCategories()" href="javascript:void(0)" class="px-3 text-gray-700">Home </a> <i class="las la-angle-right"></i> </li>
-                    <li><a @click="loadCategories( bread )" v-for="bread of breadcrumbs" :key="bread.id" href="javascript:void(0)" class="px-3 text-gray-700">{{ bread.name }} <i class="las la-angle-right"></i></a></li>
+                    <li><a @click="loadCategories()" href="javascript:void(0)" class="px-3 text-gray-500">Home </a> <i class="las la-angle-right"></i> </li>
+                    <li><a @click="loadCategories( bread )" v-for="bread of breadcrumbs" :key="bread.id" href="javascript:void(0)" class="px-3 text-gray-500">{{ bread.name }} <i class="las la-angle-right"></i></a></li>
                 </ul>
             </div>
+            <h1><a @click="loadCategories( bread )" v-for="bread of breadcrumbs" :key="bread.id" href="javascript:void(0)" class="px-3 text-gray-700 text-3xl font-bold m-2">{{ bread.name }} <i class="las text-lg mr-2 la-cash-register"></i></a></h1>
             <div id="grid-items" class="overflow-hidden h-full p- flex-col flex">
                 <div v-if="! rebuildGridComplete" class="h-full w-full flex-col flex items-center justify-center">
                     <ns-spinner></ns-spinner>
@@ -40,15 +41,15 @@
                         :height="gridItemsHeight"
                         :width="gridItemsWidth"
                         v-if="hasCategories"
-                    >
-                        <div slot="cell" class="w-full h-full" slot-scope="{ data }">
-                            <div @click="loadCategories( data )" :key="data.id" class="hover:bg-gray-200 w-full h-full cursor-pointer border border-gray-200 flex flex-col items-center justify-center overflow-hidden">
+                    > 
+                        <div slot="cell" class="w-full h-full rounded" slot-scope="{ data }">
+                            <div @click="loadCategories( data )" :key="data.id" class="hover:bg-blue-400 w-full h-full cursor-pointer border border-gray-200 flex flex-col items-center justify-center overflow-hidden rounded-xl">
                                 <div class="h-full w-full flex items-center justify-center">
                                     <img v-if="data.preview_url" :src="data.preview_url" class="object-cover h-full" :alt="data.name">
                                     <i class="las la-image text-gray-600 text-6xl" v-if="! data.preview_url"></i>
                                 </div>
                                 <div class="h-20 w-full">
-                                    <div class="relative w-full flex items-center justify-center -top-0 h-20 py-2" style="background:white">
+                                    <div class="relative w-full flex items-center justify-center -top-0 h-20 py-2 hover:bg-blue-400" >
                                         <h3 class="text-sm font-bold text-gray-700 py-2 text-center">{{ data.name }}</h3>
                                     </div>
                                 </div>
@@ -62,8 +63,9 @@
                         :width="gridItemsWidth"
                         v-if="! hasCategories"
                     >
-                        <div slot="cell" class="w-full h-full" slot-scope="{ data }">
-                            <div @click="addToTheCart( data )" :key="data.id" class="hover:bg-gray-200 w-full h-full cursor-pointer border border-gray-200 flex flex-col items-center justify-center overflow-hidden">
+                    <a @load="loadCategories( bread )" v-for="bread of breadcrumbs" :key="bread.id" href="javascript:void(0)" class="px-3 text-gray-700">{{ bread.name }} <i class="las la-angle-right"></i></a>
+                        <div slot="cell" class="w-full h-full " slot-scope="{ data }">
+                            <div @click="addToTheCart( data )" :key="data.id" class="hover:bg-blue-400 w-full h-full cursor-pointer border drop-shadow-2xl flex flex-col items-center justify-center overflow-hidden rounded-xl">
                                 <div class="h-full w-full flex items-center justify-center overflow-hidden">
                                     <img v-if="data.galleries && data.galleries.filter( i => i.featured === 1 ).length > 0" :src="data.galleries.filter( i => i.featured === 1 )[0].url" class="object-cover h-full" :alt="data.name">
                                     <i v-if="! data.galleries || data.galleries.filter( i => i.featured === 1 ).length === 0" class="las la-image text-gray-600 text-6xl"></i>
@@ -71,7 +73,7 @@
                                 <div class="h-20 w-full">
                                     <div class="relative w-full flex flex-col items-center justify-center -top-0 h-20 p-2" style="background:rgb(255 255 255 / 73%)">
                                         <h3 class="text-sm text-gray-700 text-center w-full">{{ data.name }}</h3>
-                                        <span class="text-sm text-gray-600" v-if="data.unit_quantities && data.unit_quantities.length === 1">{{ data.unit_quantities[0].sale_price | currency }}</span>
+                                        <span class="text-sm text-blue-700 font-medium" v-if="data.unit_quantities && data.unit_quantities.length === 1">{{ data.unit_quantities[0].sale_price | currency }}</span>
                                     </div>
                                 </div>
                             </div>
@@ -185,17 +187,17 @@ export default {
                 md: {
                     width: this.gridItemsWidth / 3,
                     items: 3,
-                    height: 150,
+                    height: 200,
                 },
                 lg: {
                     width: this.gridItemsWidth / 4,
                     items: 4,
-                    height: 150,
+                    height: 200,
                 },
                 xl: {
                     width: this.gridItemsWidth / 6,
                     items: 6,
-                    height: 150,
+                    height: 200,
                 }
             }
 

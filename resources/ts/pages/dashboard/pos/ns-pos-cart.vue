@@ -1,5 +1,5 @@
 <template>
-    <div id="pos-cart" class="flex-auto flex flex-col">
+    <div id="pos-cart" class="flex-auto flex flex-col drop-shadow-2xl">
         <div id="tools" class="flex pl-2" v-if="visibleSection === 'cart'">
             <div @click="switchTo( 'cart' )" class="flex cursor-pointer rounded-tl-lg rounded-tr-lg px-3 py-2 bg-white font-semibold text-gray-700">
                 <span>{{ __( 'Cart' ) }}</span>
@@ -10,7 +10,7 @@
             </div>
         </div>
         <div class="rounded shadow bg-white flex-auto flex overflow-hidden">
-            <div class="cart-table flex flex-auto flex-col overflow-hidden">
+            <div class="cart-table flex flex-auto flex-col overflow-hidden ">
                 <div id="cart-toolbox" class="w-full p-2 border-b border-gray-300">
                     <div class="border border-gray-300 rounded overflow-hidden">
                         <div class="flex flex-wrap">
