@@ -28,7 +28,7 @@
                 </ul>
             </div>
             <h1><a @click="loadCategories( bread )" v-for="bread of breadcrumbs" :key="bread.id" href="javascript:void(0)" class="px-3 text-gray-700 text-3xl font-bold m-2">{{ bread.name }} <i class="las text-lg mr-2 la-cash-register"></i></a></h1>
-            <div id="grid-items" class="overflow-hidden h-full p- flex-col flex">
+            <div id="grid-items" class="overflow-hidden h-full flex-col flex">
                 <div v-if="! rebuildGridComplete" class="h-full w-full flex-col flex items-center justify-center">
                     <ns-spinner></ns-spinner>
                     <span class="text-gray-600 my-2">Rebuilding...</span>
@@ -49,7 +49,7 @@
                                     <i class="las la-image text-gray-600 text-6xl" v-if="! data.preview_url"></i>
                                 </div>
                                 <div class="h-20 w-full">
-                                    <div class="relative w-full flex items-center justify-center -top-0 h-20 py-2 hover:bg-blue-400" >
+                                    <div class="relative w-full flex items-center justify-center -top-0 h-20 py-2  hover:bg-blue-400" >
                                         <h3 class="text-sm font-bold text-gray-700 py-2 text-center">{{ data.name }}</h3>
                                     </div>
                                 </div>
@@ -65,7 +65,7 @@
                     >
                     <a @load="loadCategories( bread )" v-for="bread of breadcrumbs" :key="bread.id" href="javascript:void(0)" class="px-3 text-gray-700">{{ bread.name }} <i class="las la-angle-right"></i></a>
                         <div slot="cell" class="w-full h-full " slot-scope="{ data }">
-                            <div @click="addToTheCart( data )" :key="data.id" class="hover:bg-blue-400 w-full h-full cursor-pointer border drop-shadow-2xl flex flex-col items-center justify-center overflow-hidden rounded-xl">
+                            <div @click="addToTheCart( data )" :key="data.id" class="hover:bg-blue-400 w-full h-full cursor-pointer border drop-shadow-2xl flex gap-px flex-col items-center justify-center overflow-hidden rounded-lg">
                                 <div class="h-full w-full flex items-center justify-center overflow-hidden">
                                     <img v-if="data.galleries && data.galleries.filter( i => i.featured === 1 ).length > 0" :src="data.galleries.filter( i => i.featured === 1 )[0].url" class="object-cover h-full" :alt="data.name">
                                     <i v-if="! data.galleries || data.galleries.filter( i => i.featured === 1 ).length === 0" class="las la-image text-gray-600 text-6xl"></i>
@@ -199,6 +199,7 @@ export default {
                     items: 6,
                     height: 200,
                 }
+                
             }
 
             const wrapperWidth  =   responsive[ POS.responsive.screenIs ].width;
